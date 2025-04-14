@@ -5,16 +5,10 @@ from openai import OpenAI
 
 from config import *
 
-client = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
+client = OpenAI(api_key=API_KEY, base_url=URL)
 
 def call_deepseek_api(text):
-    """调用DeepSeek API进行文本分析"""
-    url = URL
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json"
-    }
-    
+    """调用DeepSeek API进行文本分析"""    
     # 构造完整提示词
     system_prompt = PROMPT
     
